@@ -1,25 +1,16 @@
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+
+    const desarrollo = process.env.REACT_APP_DEVELOPMENT;
+    const produccion = process.env.REACT_APP_PRODUCTION;
+
+    return (
+        <>
+            <h1>hola mundo del desarrollo:  {desarrollo}</h1>
+            <h1>hola mundo de produccion:  {produccion}</h1>
+        </>
+    );
 }
 
 export default App;
