@@ -4,7 +4,7 @@ import {Typography} from "@material-tailwind/react";
 import statisticsCardsData from "../../data/statistics-cards-data";
 import {fetchData} from "../../utils/fetchData";
 
-const apiData = fetchData("https://api.coinstats.app/public/v1/coins?skip=0&limit=2&currency=USD")
+const apiData = fetchData("https://api.coinstats.app/public/v1/coins?skip=0&limit=500&currency=USD")
 
 export function Home() {
     const data = apiData.read();
