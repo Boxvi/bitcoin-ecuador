@@ -4,9 +4,11 @@ import {Typography} from "@material-tailwind/react";
 import statisticsCardsData from "../../data/statistics-cards-data";
 import {fetchData} from "../../utils/fetchData";
 
-const apiData = fetchData("https://api.coinstats.app/public/v1/coins?skip=0&limit=500&currency=USD")
+ const apiData = fetchData("https://api.coinstats.app/public/v1/coins?skip=0&limit=100&currency=USD")
 
 export function Home() {
+
+
     const data = apiData.read();
 
     return (
@@ -20,10 +22,10 @@ export function Home() {
                                 {...coin}
                                 title={coin.name}
                                 icon={coin.icon}
-                                value={coin.price}
+                                value={coin.availableSupply}
                                 footer={
                                     <Typography className="font-normal text-blue-gray-600">
-                                        <strong className={'green'}>{coin.priceChange1h} %</strong>
+                                        <strong className={'green'}>{coin.price} %</strong>
                                         &nbsp;{coin.symbol}
                                     </Typography>
                                 }

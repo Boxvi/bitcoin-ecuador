@@ -18,9 +18,9 @@ import {
     BellIcon,
     ClockIcon,
     CreditCardIcon,
-    Bars3Icon,
+    Bars3Icon, MoonIcon, SunIcon
 } from "@heroicons/react/24/solid";
-import {setOpenConfigurator, setOpenSidenav, useMaterialTailwindController} from "../../context";
+import {setDarkMode, setOpenConfigurator, setOpenSidenav, useMaterialTailwindController} from "../../context";
 
 
 export function DashboardNavbar() {
@@ -28,6 +28,7 @@ export function DashboardNavbar() {
     const {fixedNavbar, openSidenav} = controller;
     const {pathname} = useLocation();
     const [layout, page] = pathname.split("/").filter((el) => el !== "");
+    // const {darkMode, openDarkMode} = controller;
 
     return (
         <Navbar
@@ -101,6 +102,8 @@ export function DashboardNavbar() {
                     >
                         <Cog6ToothIcon className="h-5 w-5 text-blue-gray-500"/>
                     </IconButton>
+
+
                     <Menu>
                         <MenuHandler>
                             <IconButton variant="text" color="blue-gray">
