@@ -4,7 +4,7 @@ import {Typography} from "@material-tailwind/react";
 import statisticsCardsData from "../../data/statistics-cards-data";
 import {fetchData} from "../../utils/fetchData";
 
- const apiData = fetchData("https://api.coinstats.app/public/v1/coins?skip=0&limit=100&currency=USD")
+ const apiData = fetchData("https://api.coinstats.app/public/v1/coins?skip=0&limit=500&currency=USD")
 
 export function Home() {
 
@@ -14,6 +14,7 @@ export function Home() {
     return (
         <div className="mt-12">
             <div className="mb-12 grid gap-y-10 gap-x-6 md:grid-cols-2 xl:grid-cols-4">
+
                 <Suspense fallback={<div>Loading...</div>}>
                     {data.coins?.map((coin) => (
                         <>

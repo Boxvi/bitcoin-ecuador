@@ -1,6 +1,7 @@
 import {Typography} from "@material-tailwind/react";
 import {HeartIcon} from "@heroicons/react/24/solid";
 import PropTypes from "prop-types";
+import React from "react";
 
 export function Footer({brandName, brandLink, routes}) {
     const year = new Date().getFullYear();
@@ -14,6 +15,7 @@ export function Footer({brandName, brandLink, routes}) {
                     <a
                         href={brandLink}
                         target="_blank"
+                        rel="noopener noreferrer"
                         className="transition-colors hover:text-blue-500"
                     >
                         {brandName}
@@ -41,19 +43,21 @@ export function Footer({brandName, brandLink, routes}) {
 }
 
 const ambiente = process.env.REACT_APP_AMBIENTE;
+const url = process.env.REACT_APP_URL;
 
 Footer.defaultProps = {
     brandName: "ECUADOR BTC",
-    brandLink: "https://bitcoin-ecuador.vercel.app/",
+    brandLink: `${url}`,
     routes: [
-        {name: "ECUADOR BTC", path: "https://bitcoin-ecuador.vercel.app/"},
-        {name: "Sobre Nosotros", path: "https://bitcoin-ecuador.vercel.app/presentation"},
-        {name: "Blog", path: "https://bitcoin-ecuador.vercel.app/blog"},
-        {name: "Licencias", path: "https://bitcoin-ecuador.vercel.app/license"},
-        {name: `${ambiente}`, path: "https://bitcoin-ecuador.vercel.app/"},
+        {name: "ECUADOR BTC", path: `${url}`},
+        {name: "Sobre Nosotros", path: `${url}dashboard/presentation`},
+        {name: "Blog", path: `${url}dashboard/blog`},
+        {name: "Licencias", path: `${url}dashboard/license`},
+        {name: `${ambiente}`, path: `${url}`},
 
     ],
 };
+
 
 Footer.propTypes = {
     brandName: PropTypes.string,
