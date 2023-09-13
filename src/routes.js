@@ -4,9 +4,12 @@ import {
     TableCellsIcon,
     BellIcon,
     ArrowRightOnRectangleIcon,
-    UserPlusIcon,
+    UserPlusIcon, PresentationChartLineIcon
 } from "@heroicons/react/24/solid";
 import {Home} from "./pages/dashboard/home";
+import {Estadisticas} from "./pages/dashboard/estadisticas";
+import {Ingresar} from "./pages/auth";
+import Registrarse from "./pages/auth/registrarse";
 
 
 const icon = {
@@ -17,42 +20,80 @@ export const routes = [
     {
         layout: "dashboard",
         pages: [
+            // {
+            //     // icon: <HomeIcon {...icon} />,
+            //     // name: "dashboard",
+            //     // path: "",
+            //     element: <Home/>,
+            // },
             {
                 icon: <HomeIcon {...icon} />,
-                name: "dashboard",
+                name: "divisas",
                 path: "/home",
-                element: <Home />,
+                element: <Home/>,
             },
-            {
-                icon: <UserCircleIcon {...icon} />,
-                name: "profile",
-                path: "/profile",
-            },
-            {
-                icon: <TableCellsIcon {...icon} />,
-                name: "tables",
-                path: "/tables",
-            },
-            {
-                icon: <BellIcon {...icon} />,
-                name: "notifactions",
-                path: "/notifactions",
-            },
+            // {
+            //     icon: <PresentationChartLineIcon {...icon} />,
+            //     name: "estadisticas",
+            //     path: "/estadisticas",
+            //     element: <Estadisticas/>,
+            // },
+            //
+            // {
+            //     icon: <UserCircleIcon {...icon} />,
+            //     name: "profile",
+            //     path: "/profile",
+            // },
+            // {
+            //     icon: <TableCellsIcon {...icon} />,
+            //     name: "tables",
+            //     path: "/tables",
+            // },
+            // {
+            //     icon: <BellIcon {...icon} />,
+            //     name: "notofications",
+            //     path: "/notifactions",
+            // },
+            // {
+            //     icon: <UserIcon {...icon} />,
+            //     name: "sobre nosotros",
+            //     path: "/presentacion",
+            //     element: <Presentacion/>,
+            // },
+            // {
+            //     icon: <GlobeAltIcon {...icon}/>,
+            //     name: "blog",
+            //     path: "/blog",
+            //     element: <Blog/>,
+            //
+            // },
+            // {
+            //     icon: <ClipboardIcon {...icon}/>,
+            //     name: "licencias",
+            //     path: "/licencias",
+            //     element: <License/>,
+            //
+            // },
+
         ],
     },
+
     {
-        title: "auth pages",
+        title: "Authorizacion",
         layout: "auth",
         pages: [
             {
                 icon: <ArrowRightOnRectangleIcon {...icon} />,
-                name: "sign in",
-                path: "/sign-in",
+                name: "Ingresar",
+                path: "/ingresar",
+                element: <Ingresar/>,
             },
             {
                 icon: <UserPlusIcon {...icon} />,
-                name: "sign up",
-                path: "/sign-up",
+                name: "Registrarse",
+                path: "/registrarse",
+                element: <Registrarse/>,
+
             },
         ],
     },
